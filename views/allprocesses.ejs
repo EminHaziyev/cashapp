@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+    }
+
+    .transaction-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .transaction-item {
+      background-color: #1f1f1f;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .transaction-item .transaction-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .transaction-item .transaction-amount {
+      font-size: 24px;
+    }
+
+    .transaction-item .transaction-date {
+      color: #000;
+      font-size: 14px;
+    }
+
+    .transaction-item .transaction-description {
+      color: #000;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .transaction-item .transaction-type {
+      font-size: 16px;
+    }
+
+    .transaction-item.income {
+      background-color: #A2FF86;
+    }
+
+    .transaction-item.outcome {
+      background-color: #FF2171;
+    }
+
+    .transaction-item .transaction-amount,
+    .transaction-item .transaction-date,
+    .transaction-item .transaction-description,
+    .transaction-item .transaction-type {
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>All Transactions</h2>
+    <ul class="transaction-list">
+        <% processes.forEach(process => { %>
+            <li class="transaction-item <%= process.type %>">
+                <div class="transaction-details">
+                  <div class="transaction-amount"><%= process.amount %> ₼</div>
+                  <div class="transaction-date"><%= process.time %></div>
+                </div>
+                <div class="transaction-description">Payment from <%= username %></div>
+                <div class="transaction-type"><%= process.type %></div>
+            </li>
+            
+            
+          
+        
+        <% }); %>
+    </ul>
+  </div>
+</body>
+
+</html>
+
+

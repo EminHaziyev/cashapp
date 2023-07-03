@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #333333;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="number"],
+    .toggle-buttons label {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #555555;
+      color: #ffffff;
+    }
+    
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: #ffffff;
+      cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+    
+    .toggle-buttons label {
+      display: inline-block;
+      margin-right: 10px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+    
+    .toggle-buttons input[type="radio"] {
+      display: none;
+    }
+    
+    .toggle-buttons input[type="radio"]:checked + label {
+      background-color: #007bff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Add Income or Outcome</h2>
+    <form action="/add_process" method="post">
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" name="amount" min="0" step="0.01" required>
+      
+      <label>Type:</label>
+      <div class="toggle-buttons">
+        <input type="radio" id="income" name="type" value="income"  checked>
+        <label for="income">Income</label>
+        <input type="radio" id="outcome" name="type" value="outcome">
+        <label for="outcome">Outcome</label>
+      </div>
+      
+      <input type="submit">
+    </form>
+  </div>
+</body>
+
+</html>
