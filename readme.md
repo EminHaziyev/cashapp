@@ -19,7 +19,7 @@ Cash App is a personal finance management application that allows users to track
 
   
 ## Note
-I didn't create this project to release a new website to use. This is an app created by me to practise backend development.
+I didn't create this project to release a new website to use. This is an app created by me to practise backend development. Frontend codes are not mine.
 If you have feedback, feel free to send me:
 
 - Email: ehziyev@gmail.com
